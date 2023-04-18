@@ -1,4 +1,4 @@
-name: main
+name: Create release job
 
 on: [push]
 

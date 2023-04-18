@@ -1,0 +1,10 @@
+name: 'Create release'
+description: 'Create release description'
+inputs:
+  myToken:  # id of input
+    description: 'Repository token'
+    required: true
+    default: ${{ secrets.GITHUB_TOKEN }}
+runs:
+  using: 'node16'
+  main: 'index.js'

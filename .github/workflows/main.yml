@@ -17,4 +17,4 @@ jobs:
         uses: ./.github/workflows/create-tag-action/ # Uses an action in the root directory
         id: hello
         with:
-          myToken: ${{ secrets.GITHUB_TOKEN }}
+          myToken: ${{ secrets.SECRET_TOKEN }}

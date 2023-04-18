@@ -11,8 +11,6 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Print the GITHUB_REF env variable
-        run: echo  ${{ secrets.GITHUB_TOKEN }}
       - name: Create release
         uses: ./.github/workflows/create-tag-action/ # Uses an action in the root directory
         id: hello

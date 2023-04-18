@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Create release
-        uses: ./create-tag-action/ # Uses an action in the root directory
+        uses: ./.github/workflows/create-tag-action/ # Uses an action in the root directory
         id: hello
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}

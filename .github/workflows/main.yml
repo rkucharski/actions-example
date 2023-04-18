@@ -26,4 +26,4 @@ jobs:
         id: hello
         with:
           token: ${{ secrets.SECRET_TOKEN }}
-          isDraft: ${{ github.event.inputs.isDraft }}
+          isDraft: ${{ inputs.isDraft }}

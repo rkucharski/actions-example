@@ -13,7 +13,8 @@ async function run() {
     // https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#about-the-github_token-secret
     //const myToken = core.getInput('myToken');
 
-    const myToken = core.getInput('myToken');
+    const myToken = core.getInput('token');
+    const isDraft = Boolean(core.getInput('isDraft'));
     const octokit = github.getOctokit(myToken)
 
     const coreVersion = await getVersion(octokit, coreVersionVariableName);
@@ -27,7 +28,7 @@ async function run() {
         tag_name: `${tag}`,
         name: `${tag}`,
         body: `Release of version ${tag}`,
-        draft: false,
+        draft: isDraft,
         prerelease: false    
     });
 

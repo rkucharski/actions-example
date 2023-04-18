@@ -1,11 +1,13 @@
 name: Create release job
 
-on: [push]
+on:
+  pull_request:
+    types: [ opened ]
 
 jobs:
-  hello_world_job:
+  create-draft-release:
     runs-on: ubuntu-latest
-    name: Create release job
+    name: Create draft release
     steps:
       # To use this repository's private action,
       # you must check out the repository
@@ -15,4 +17,7 @@ jobs:
         uses: ./.github/workflows/create-tag-action/ # Uses an action in the root directory
         id: hello
         with:
-          myToken: ${{ secrets.SECRET_TOKEN }}
+          token: ${{ secrets.SECRET_TOKEN }}
+          isDraft: true
+      - name: Print Pull request number
+        run: echo "Pull request number is ${{ github.event.pull_request.number }}"

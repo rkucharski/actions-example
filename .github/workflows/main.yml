@@ -6,11 +6,8 @@ on:
       isDraft:
         description: 'Should release be draft'
         required: false
-        default: 'false'
-        type: choice
-        options:
-        - 'true'
-        - 'false'        
+        default: false
+        type: boolean    
 
 jobs:
   create-draft-release:

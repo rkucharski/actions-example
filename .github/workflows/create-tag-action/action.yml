@@ -1,10 +1,14 @@
 name: 'Create release'
 description: 'Create release description'
 inputs:
-  myToken:  # id of input
+  token:  # id of input
     description: 'Repository token'
     required: true
     default: ''
+  isDraft:
+    description: 'Should release be draft'
+    required: false
+    default: 'true'
 runs:
   using: 'node16'
   main: 'index.js'

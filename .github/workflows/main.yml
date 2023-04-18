@@ -1,5 +1,13 @@
 name: Create release job
 
+on:
+  workflow_dispatch:
+    inputs:
+      isDraft:
+        description: 'Should release be draft'
+        required: false
+        default: 'false'    
+
 jobs:
   create-draft-release:
     runs-on: ubuntu-latest
@@ -14,4 +22,4 @@ jobs:
         id: hello
         with:
           token: ${{ secrets.SECRET_TOKEN }}
-          isDraft: true
+          isDraft: ${{ github.event.inputs.isDraft }}
